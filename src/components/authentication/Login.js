@@ -1,4 +1,4 @@
-import classes from "./Login.module.css";
+import classes from "./Auth.module.css";
 
 const Login = () => {
   return (
