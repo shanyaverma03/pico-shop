@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <Link>PocoShop</Link>
       <input type="text" placeholder="Search here" />
-      <Link>Login</Link>
+      <Link to="login">Login</Link>
       <Link>Cart</Link>
     </>
   );
