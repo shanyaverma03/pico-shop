@@ -9,7 +9,8 @@ const Header = () => {
       <div className={classes.options}>
         <input type="text" placeholder="Search here" />
         <Link to="login">Login</Link>
-        <Link>Cart</Link>
+        <Link to="cart">Cart</Link>
+        <Link to="wishlist">Wishlist</Link>
       </div>
     </div>
   );
