@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "price": 599.99,
+      "description": "Latest smartphone with advanced features.",
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "price": 1299.99,
+      "description": "Powerful laptop for work and entertainment.",
+      "category": "Electronics"
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "price": 89.99,
+      "description": "Comfortable running shoes for your active lifestyle.",
+      "category": "Fashion"
+    },
+    {
+      "id": 4,
+      "name": "Backpack",
+      "price": 49.99,
+      "description": "Durable and stylish backpack for everyday use.",
+      "category": "Fashion"
+    },
+    {
+      "id": 5,
+      "name": "Coffee Maker",
+      "price": 79.99,
+      "description": "Automatic coffee maker for your kitchen.",
+      "category": "Home & Kitchen"
+    },
+    {
+      "id": 6,
+      "name": "Fitness Tracker",
+      "price": 59.99,
+      "description": "Track your fitness activities with this advanced tracker.",
+      "category": "Electronics"
+    },
+    {
+      "id": 7,
+      "name": "Winter Jacket",
+      "price": 129.99,
+      "description": "Warm and stylish winter jacket for cold weather.",
+      "category": "Fashion"
+    },
+    {
+      "id": 8,
+      "name": "Blender",
+      "price": 39.99,
+      "description": "High-performance blender for your kitchen needs.",
+      "category": "Home & Kitchen"
+    }
+  ]
+}
