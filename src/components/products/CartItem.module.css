@@ -1,0 +1,58 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  margin: 0;
+}
+
+.price {
+  margin: 0;
+  color: #888;
+}
+
+.quantity_control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quantity_control button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.quantity {
+  margin: 0 10px;
+}
+
+.total_price {
+  margin: 0;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.remove_button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
