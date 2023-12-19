@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import classes from "./ProductItem.module.css";
 import { wishlistActions } from "../../store/wishlistSlice";
+import { cartActions } from "../../store/cartSlice";
 
 const ProductItem = ({
   id,
@@ -18,8 +19,9 @@ const ProductItem = ({
     (state) => state.authentication.isAuthenticated
   );
 
-  const addToCartHandler = () => {
+  const addToCartHandler = (id, name, price) => {
     if (isAuthenticated) {
+      dispatch(cartActions.addToCart({ id, name, price }));
       navigate("/cart");
     } else {
       navigate("/login");
@@ -50,7 +52,9 @@ const ProductItem = ({
       <p className={classes.productPrice}>{price}</p>
       <p className={classes.productCategory}>{category}</p>
       <div className={classes.options}>
-        <button onClick={addToCartHandler}>Add to Cart</button>
+        <button onClick={() => addToCartHandler(id, name, price)}>
+          Add to Cart
+        </button>
         {!isFavourite && (
           <button onClick={addToFavHandler}>Add to Favourite</button>
         )}
