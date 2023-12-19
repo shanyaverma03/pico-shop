@@ -1,6 +1,11 @@
+import { useDispatch } from "react-redux";
+
 import classes from "./CartItem.module.css";
+import { cartActions } from "../../store/cartSlice";
 
 const CartItem = ({ id, name, price, quantity }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.card}>
@@ -12,7 +17,12 @@ const CartItem = ({ id, name, price, quantity }) => {
           <button>+</button>
         </div>
         <p className={classes.total_price}>Total:88</p>
-        <button className={classes.remove_button}>Remove</button>
+        <button
+          className={classes.remove_button}
+          onClick={() => dispatch(cartActions.removeFromCart(id))}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
