@@ -1,10 +1,19 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import classes from "./ProductItem.module.css";
+import { wishlistActions } from "../../store/wishlistSlice";
 
-const ProductItem = ({ name, description, price, category, isFavourite }) => {
+const ProductItem = ({
+  id,
+  name,
+  description,
+  price,
+  category,
+  isFavourite,
+}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const isAuthenticated = useSelector(
     (state) => state.authentication.isAuthenticated
   );
@@ -19,6 +28,15 @@ const ProductItem = ({ name, description, price, category, isFavourite }) => {
 
   const addToFavHandler = () => {
     if (isAuthenticated) {
+      const newWishlistItem = {
+        id,
+        name,
+        description,
+        price,
+        category,
+      };
+      //add another dispatch to set isfav to true- action thunk
+      dispatch(wishlistActions.addToWishlist(newWishlistItem));
       navigate("/wishlist");
     } else {
       navigate("/login");
@@ -33,7 +51,9 @@ const ProductItem = ({ name, description, price, category, isFavourite }) => {
       <p className={classes.productCategory}>{category}</p>
       <div className={classes.options}>
         <button onClick={addToCartHandler}>Add to Cart</button>
-        <button onClick={addToFavHandler}>Add to Favourite</button>
+        {!isFavourite && (
+          <button onClick={addToFavHandler}>Add to Favourite</button>
+        )}
       </div>
     </div>
   );
