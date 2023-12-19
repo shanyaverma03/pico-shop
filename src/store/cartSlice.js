@@ -24,6 +24,22 @@ export const cartSlice = createSlice({
     removeFromCart(state, action) {
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
+    increaseQuantity(state, action) {
+      state.cart.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    },
+    decreaseQuantity(state, action) {
+      state.cart.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    },
   },
 });
 
